@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^ 0.8.14;
 
+error Unauthorized(address caller);
+
 contract CustomError {
   address payable owner = payable(msg.sender);
-
-  error Unauthorized(address caller);
 
   function withdraw() public {
     if (msg.sender != owner) {
